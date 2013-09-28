@@ -19,7 +19,7 @@ module.exports = function(grunt) {
           compass: true
         },
         files: {                         // Dictionary of files
-          'css/main.css': 'css/main.scss'
+          'static/main.css': 'css/main.scss'
         }
       },
       dist2: {                            // Target
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jekyll');
 
 
-  grunt.registerTask('site', ['jekyll', 'sass:dist2']);
+  grunt.registerTask('site', ['sass:dist', 'jekyll']);
   grunt.registerTask('default', ['site']);
 
 };

@@ -4,10 +4,25 @@
 .articles-button {
   display: block;
 
-  &:before {
+  span {
+    @include transition(transform 140ms);
+    @include translate3d(0,0,0);
+    display: inline-block;
     position: relative;
     top: 2px;
     margin-right: 0.5em;
+  }
+
+  /**
+   * @hover
+   */
+
+  &:hover {
+    color: $color-pink;
+
+    span {
+      @include translate3d(-0.3em,0,0);
+    }
   }
 }
 

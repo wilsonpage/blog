@@ -8,12 +8,13 @@
 .share li {
   margin-bottom: $padding-25;
 
-  a {
-    &:before {
-      position: relative;
-      top: 2px;
-      margin-right: 0.5em;
-    }
+  span {
+    @include transition(transform 140ms);
+    @include scale(1);
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin-right: 0.5em;
   }
 
   /**
@@ -21,6 +22,10 @@
    */
 
   &:hover {
-    color: $color-pink
+    color: $color-pink;
+
+    span {
+      @include scale(1.2);
+    }
   }
 }
