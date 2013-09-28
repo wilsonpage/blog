@@ -1,0 +1,26 @@
+
+/**
+ * Share
+ */
+
+.share {}
+
+.share li {
+  margin-bottom: $padding-25;
+
+  a {
+    &:before {
+      position: relative;
+      top: 2px;
+      margin-right: 0.5em;
+    }
+  }
+
+  /**
+   * @hover
+   */
+
+  &:hover {
+    color: $color-pink
+  }
+}

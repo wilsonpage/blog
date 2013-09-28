@@ -1,0 +1,26 @@
+
+/**
+ * Layout A
+ */
+
+.layout-a {
+  margin-bottom: $padding-200;
+}
+
+/** Region 1
+ ---------------------------------------------------------*/
+
+.layout-a_region-1 {
+  margin-right: $aside-width;
+  padding-right: $padding;
+}
+
+/** Region 2
+ ---------------------------------------------------------*/
+
+.layout-a_region-2 {
+  float: right;
+  width: $aside-width;
+  margin-left: -$aside-width;
+  //text-align: right;
+}

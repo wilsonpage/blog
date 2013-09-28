@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<div class="layout-b">
+  <div class="layout-b_slot-1">
+    <aside>
+      <div><a class="articles-button" href="/" data-icon="&#xf053;">Back to Articles</a></div>
+      <div class="post_date">{{ page.date | date_to_long_string }}</div>
+      <ul class="tags">
+        {% for tag in page.tags %}
+          <li>{{ tag }}</li>
+        {% endfor %}
+      </ul>
+      {% include share.html %}
+    </aside>
+  </div>
+  <div class="layout-b_slot-3">
+    <aside>
+      {% include bio.html %}
+      {% include follow.html %}
+    </aside>
+  </div>
+  <div class="layout-b_slot-2">
+    <div class="post">
+      <h2 class="post_title">{{ page.title }}</h2>
+      <div class="post_content">{{ content }}</div>
+    </div>
+  </div>
+</div>

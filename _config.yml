@@ -1,0 +1,13 @@
+name: Wilson Page
+description: A description for your blog
+url: http://your-blog-url.example.com
+permalink: /:title
+markdown: redcarpet
+pygments: true
+exclude: [
+  'css',
+  'node_modules',
+  'GruntFile.js',
+  'package.json'
+]
+

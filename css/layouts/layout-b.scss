@@ -1,0 +1,100 @@
+
+$post-meta-title-height: 47px;
+
+/**
+ * Layout B
+ */
+
+.layout-b {
+
+  .bio,
+  .tags,
+  .share,
+  .follow,
+  .post-meta_title {
+    display: none;
+  }
+
+  /**
+   * @large
+   */
+
+  @include large {
+    .bio,
+    .share,
+    .follow,
+    .post-meta_title {
+      display: block;
+    }
+
+    // .share:not(.follow) {
+    //   @include translate3d(0, -$post-meta-title-height, 0);
+    //   @include transition(transform, 240ms);
+    //   background: #fff;
+
+    //   .scroll-gt60 & {
+    //     @include translate3d(0, 0, 0);
+    //   }
+    // }
+  }
+}
+
+/** Slot 1
+ ---------------------------------------------------------*/
+
+.layout-b_slot-1 {
+  padding-bottom: $padding-50;
+
+  /**
+   * @large
+   */
+
+  @include large {
+    @include transition(transform 200ms);
+    @include translate3d(0,0,0);
+    position: fixed;
+    float: left;
+    width: $aside-width;
+    margin-right: -$aside-width;
+
+    // .scroll-gt60 & {
+    //   @include translate3d(0,-$padding,0);
+    // }
+  }
+}
+
+/** Slot 2
+ ---------------------------------------------------------*/
+
+.layout-b_slot-2 {
+
+  @include large {
+    margin-left: $aside-width;
+    padding-left: $padding;
+    overflow: hidden;
+  }
+
+  @media (min-width:860px) {
+    margin-right: $aside-width;
+    padding-right: $padding;
+  }
+}
+
+/** Slot 3
+ ---------------------------------------------------------*/
+
+.layout-b_slot-3 {
+  display: none;
+
+
+  @media (min-width:860px) {
+    display: block;
+    float: right;
+    width: $aside-width;
+    //text-align: right;
+
+    .bio {
+      display: block;
+    }
+  }
+}

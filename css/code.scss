@@ -1,0 +1,27 @@
+
+code {
+  display: inline;
+  padding: 0 6px;
+  border-radius: 4px;
+  color: #333;
+  margin: 0 2px;
+  padding: 2px 5px;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  font-size: 12px;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  color: #000;
+}
+
+pre code {
+  display: block;
+  margin: 0;
+  padding: $padding-50 $padding-75;
+  line-height: 1.65em;
+  overflow: auto;
+}
+
+.caption pre {
+  overflow: auto;
+}

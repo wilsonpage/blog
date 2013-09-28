@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="site">
+      <div class="inner">
+        <div class="header"></div>
+        {{ content }}
+        {% include footer.html %}
+      </div>
+    </div>
+    <script>
+      (function() {
+        var body = document.body;
+
+        function debounce(fn) {
+          var timer;
+          return function() {
+            var args = arguments;
+            clearTimeout(timer);
+            timer = setTimeout(function() {
+              fn.apply(this, args);
+            }, 30);
+          }
+        }
+
+
+        window.addEventListener('scroll', debounce(function(e) {
+          var y = window.scrollY;
+          body.classList.toggle('scroll-gt60', y > 60);
+        }));
+
+        var postMetaTitle = document.querySelector('.js-post-meta-title');
+        if (postMetaTitle) {
+          postMetaTitle.addEventListener('click', function() {
+            body.scrollTop = 0;
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

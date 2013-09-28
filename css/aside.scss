@@ -1,0 +1,21 @@
+
+aside {
+  padding-top: 8px;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.4;
+  font-family: 'Times New Roman';
+  color: #999;
+
+  > * {
+    margin-top: $padding-50;
+    padding-top: $padding-50;
+    border-top: $border-dotted;
+  }
+
+  > :first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+}

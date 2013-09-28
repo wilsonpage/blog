@@ -1,0 +1,59 @@
+
+/**
+ * Index Post
+ */
+
+.index-post {
+  margin-bottom: $padding;
+  padding-bottom: $padding;
+  border-bottom: $border-dotted;
+
+  /**
+   * @last-child
+   */
+
+  &:last-child {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+}
+
+/** Slot 1
+ ---------------------------------------------------------*/
+
+.index-post_slot-1 {
+  float: left;
+  width: $aside-width;
+  margin-right: -$aside-width;
+  font-style: italic;
+}
+
+/** Slot 2
+ ---------------------------------------------------------*/
+
+.index-post_slot-2 {
+  margin-left: $aside-width;
+  padding-left: $padding;
+
+  > .inner {
+    display: block;
+    //padding-bottom: $padding;
+    //border-bottom: $border-dotted;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+/** Title
+ ---------------------------------------------------------*/
+
+.index-post_title {
+  margin-bottom: $padding-50;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.2em;
+  color: #000;
+}
