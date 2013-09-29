@@ -1,6 +1,5 @@
 
 aside {
-  padding-top: 8px;
   font-size: 16px;
   font-style: italic;
   line-height: 1.4;
@@ -17,5 +16,9 @@ aside {
     margin-top: 0;
     padding-top: 0;
     border-top: 0;
+  }
+
+  @include medium {
+    padding-top: 8px;
   }
 }

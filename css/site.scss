@@ -7,7 +7,7 @@
   position: relative;
   min-height: 100%;
   padding: $padding 0;
-  border-top: solid $padding-50 #EEE;
+  border-top: solid 4px rgba(255,0,0,0.1);
   line-height: 1.5;
 
   > .inner {
@@ -27,9 +27,13 @@
   }
 }
 
-a,
-a:hover {
+a {
   color: $color-pink;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 /** Title
@@ -41,7 +45,11 @@ a:hover {
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 12px;
-  color: #bbb;
+  color: $color-pink;
   font-size: 16px;
   padding: $padding 0 $padding-200+4px;
+
+  a {
+    color: inherit;
+  }
 }

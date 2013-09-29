@@ -16,10 +16,9 @@
   width: 33.33%;
   margin-bottom: $padding-25;
 
-
-  a {
-    color: #999;
-  }
+  // a {
+  //   color: #999;
+  // }
 
   span {
     @include transition(transform 140ms);

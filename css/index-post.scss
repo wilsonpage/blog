@@ -4,7 +4,9 @@
  */
 
 .index-post {
-  margin-bottom: $padding;
+  margin-bottom: $padding-75;
+  padding-bottom: $padding-75;
+  border-bottom: $border-dotted;
 
   > .inner {
     color: inherit;
@@ -27,19 +29,38 @@
     padding: 0;
     border: 0;
   }
+
+  /**
+   * @large
+   */
+
+  @include medium {
+    padding-bottom: 0;
+    border-bottom: 0;
+    margin-bottom: $padding;
+  }
 }
 
 /** Slot 1
  ---------------------------------------------------------*/
 
 .index-post_slot-1 {
+  margin-bottom: $padding-50;
 
+  aside {
+    padding-top: 0;
+  }
 
   @include large {
     float: left;
     width: $aside-width;
     margin-right: -$aside-width;
+    margin-bottom: 0;
     font-style: italic;
+
+    aside {
+      padding-top: 8px;
+    }
   }
 }
 
@@ -48,16 +69,22 @@
 
 .index-post_slot-2 {
 
-
-  @include large {
-    margin-left: $aside-width;
-    padding-left: $padding;
+  @include medium {
 
     > .inner {
       display: block;
       padding-bottom: $padding;
       border-bottom: $border-dotted;
+
+      .index-post:last-child & {
+        border: 0;
+      }
     }
+  }
+
+  @include large {
+    margin-left: $aside-width;
+    padding-left: $padding;
 
     a:hover {
       text-decoration: none;
@@ -70,8 +97,12 @@
 
 .index-post_title {
   margin-bottom: $padding-50;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 300;
   line-height: 1.2em;
   color: #000;
+
+  @include medium {
+    font-size: 32px;
+  }
 }

@@ -4,7 +4,7 @@ title:  "Introducing 'layout boundaries'"
 date:   2013-08-18 19:31:19
 tags: git
 ---
-<img alt="image" src="http://media.tumblr.com/f673322f1282597ef26df61c5cb9f53b/tumblr_inline_mrr2eg96tU1qz4rgp.jpg" />
+![](/lib/images/tumblr_inline_mrr2eg96tU1qz4rgp.jpg)
 
 **'Layout' is the process a browser undergoes to calculate the position and size of each element in a document before it can start painting pixels.** The process of layout can be costly, especially on low powered mobile devices.
 
@@ -32,7 +32,7 @@ To prove my point I have found a layout case on Facebook that could be optimised
 
 By hovering over the layout event in Chrome Devtools Timeline we can see that the 'Layout scope' is labeled as 'Whole document' (highlighted in blue), the 'Layout tree size' is <strong>2551 nodes</strong>, and the 'Duration' is <strong>2.142ms</strong>.
 
-![](http://media.tumblr.com/d8dd9029a4a7fb8f74d7d4da2675f83d/tumblr_inline_mrqznjskX21qz4rgp.png)
+![](/lib/images/tumblr_inline_mrqznjskX21qz4rgp.png)
 
 Diving into the Elements panel I find a suitable parent node above where the DOM changes are taking place. I set a pixel based height, and set `overflow: hidden`. The element is already `position: absolute`, and already has a width set, so I don't have to introduce those changes.
 
@@ -42,7 +42,7 @@ This should enforce a layout boundary to scope the reflow to a much smaller port
 
 I now run the same routine and observe the layout events again in the Timeline panel.
 
-![](http://media.tumblr.com/e7ae01b0a9e5bbdbe3a83145735e780b/tumblr_inline_mrqzqyIsDu1qz4rgp.png")
+![](/lib/images/tumblr_inline_mrqzqyIsDu1qz4rgp.png)
 
 When we hover over the layout event we can see the blue highlighted area now only covers our newly promoted 'layout boundary' element. The 'Layout scope' is now labeled as 'partial', the 'Layout tree size' is **228 nodes (91% reduction)** and the Duration is **1.255ms (41% reduction)**.
 

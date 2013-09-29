@@ -32,6 +32,20 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: 'lib/js',
+          name: 'main',
+          //mainConfigFile: 'lib/js/main.js',
+          insertRequire: ['main'],
+          out: '_site/lib/js/main.built.js',
+          include: ["../../components/requirejs/require"]
+        }
+      }
+    },
+
     watch: {
       jekyll: {
         files: [
@@ -57,6 +71,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-jekyll');
 
 
