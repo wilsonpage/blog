@@ -7,8 +7,7 @@
   position: relative;
   min-height: 100%;
   padding: $padding 0;
-  border: solid #EEE;
-  border-width: $padding-50 0;
+  border-top: solid $padding-50 #EEE;
   line-height: 1.5;
 
   > .inner {
@@ -17,9 +16,7 @@
     padding: 0 $padding;
   }
 
-  a {
-    //color: $color-pink;
-  }
+
 
   /**
    * @large
@@ -28,4 +25,23 @@
   @include large {
     padding: $padding-200 0 200px;
   }
+}
+
+a,
+a:hover {
+  color: $color-pink;
+}
+
+/** Title
+ ---------------------------------------------------------*/
+
+.site-title {
+  text-align: center;
+  font-family: 'times new roman';
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  color: #bbb;
+  font-size: 16px;
+  padding: $padding 0 $padding-200+4px;
 }

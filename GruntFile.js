@@ -28,7 +28,7 @@ module.exports = function(grunt) {
           compass: true
         },
         files: {                         // Dictionary of files
-          '_site/css/main.css': 'css/main.scss'
+          '_site/static/main.css': 'css/main.scss'
         }
       }
     },

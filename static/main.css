@@ -70,8 +70,7 @@ a {
   position: relative;
   min-height: 100%;
   padding: 24px 0;
-  border: solid #EEE;
-  border-width: 12px 0;
+  border-top: solid 12px #eeeeee;
   line-height: 1.5;
   /**
    * @large
@@ -82,10 +81,27 @@ a {
   margin: 0 auto;
   padding: 0 24px;
 }
-@media (min-width: 700px) {
+.site a,
+.site a:hover {
+  color: #ff00b8;
+}
+@media (min-width: 900px) {
   .site {
     padding: 48px 0 200px;
   }
+}
+
+/** Title
+ ---------------------------------------------------------*/
+.site-title {
+  text-align: center;
+  font-family: 'times new roman';
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  color: #bbb;
+  font-size: 16px;
+  padding: 24px 0 52px;
 }
 
 .highlight {
@@ -475,7 +491,7 @@ aside > :first-child {
    * @large
    */
 }
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .post_title {
     margin-bottom: 24px;
   }
@@ -519,14 +535,12 @@ aside > :first-child {
   border: 1px solid #ddd;
 }
 .post_content a {
+  color: #ff00b8;
   /**
    * @hover
    */
 }
-.post_content a:hover {
-  text-decoration: underline;
-}
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .post_content > * {
     margin-bottom: 24px;
   }
@@ -623,7 +637,18 @@ pre code {
 /**
  * Share
  */
+.share, .follow {
+  overflow: hidden;
+}
+@media (min-width: 600px) {
+  .share, .follow {
+    overflow: visible;
+  }
+}
+
 .share li, .follow li {
+  float: left;
+  width: 33.33%;
   margin-bottom: 6px;
   /**
    * @hover
@@ -654,17 +679,24 @@ pre code {
   -o-transform: scale(1.2, 1.2);
   transform: scale(1.2, 1.2);
 }
+@media (min-width: 600px) {
+  .share li, .follow li {
+    float: none;
+    width: auto;
+  }
+}
 
 /**
  * Index Post
  */
 .index-post {
   margin-bottom: 24px;
-  padding-bottom: 24px;
-  border-bottom: 1px dotted #dddddd;
   /**
    * @last-child
    */
+}
+.index-post img {
+  max-width: 100%;
 }
 .index-post:last-child {
   margin: 0;
@@ -674,24 +706,34 @@ pre code {
 
 /** Slot 1
  ---------------------------------------------------------*/
-.index-post_slot-1 {
-  float: left;
-  width: 180px;
-  margin-right: -180px;
-  font-style: italic;
+@media (min-width: 900px) {
+  .index-post_slot-1 {
+    float: left;
+    width: 180px;
+    margin-right: -180px;
+    font-style: italic;
+  }
 }
 
 /** Slot 2
  ---------------------------------------------------------*/
-.index-post_slot-2 {
-  margin-left: 180px;
-  padding-left: 24px;
-}
-.index-post_slot-2 > .inner {
-  display: block;
-}
-.index-post_slot-2 a:hover {
-  text-decoration: none;
+@media (min-width: 900px) {
+  .index-post_slot-2 {
+    margin-left: 180px;
+    padding-left: 24px;
+  }
+  .index-post_slot-2 > .inner {
+    display: block;
+    padding-bottom: 24px;
+    border-bottom: 1px dotted #dddddd;
+    color: inherit;
+  }
+  .index-post_slot-2 > .inner:hover {
+    color: inherit;
+  }
+  .index-post_slot-2 a:hover {
+    text-decoration: none;
+  }
 }
 
 /** Title
@@ -716,7 +758,7 @@ pre code {
    * @large
    */
 }
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .footer {
     position: absolute;
     left: 0;
@@ -776,17 +818,27 @@ pre code {
 
 /** Region 1
  ---------------------------------------------------------*/
-.layout-a_region-1 {
-  margin-right: 180px;
-  padding-right: 24px;
+@media (min-width: 600px) {
+  .layout-a_region-1 {
+    margin-right: 180px;
+    padding-right: 24px;
+  }
 }
 
 /** Region 2
  ---------------------------------------------------------*/
-.layout-a_region-2 {
-  float: right;
-  width: 180px;
-  margin-left: -180px;
+@media (min-width: 600px) {
+  .layout-a_region-2 {
+    float: right;
+    width: 180px;
+    margin-left: -180px;
+  }
+}
+
+/** Slot 2
+ ---------------------------------------------------------*/
+.layout-a_slot-2 {
+  margin-bottom: 24px;
 }
 
 /**
@@ -805,7 +857,7 @@ pre code {
 .layout-b .post-meta_title {
   display: none;
 }
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .layout-b .bio,
   .layout-b .share,
   .layout-b .follow,
@@ -823,7 +875,7 @@ pre code {
    * @large
    */
 }
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .layout-b_slot-1 {
     -webkit-transition: -webkit-transform 200ms;
     -moz-transition: -moz-transform 200ms;
@@ -843,17 +895,17 @@ pre code {
 
 /** Slot 2
  ---------------------------------------------------------*/
-@media (min-width: 700px) {
+@media (min-width: 600px) {
+  .layout-b_slot-2 {
+    margin-right: 180px;
+    padding-right: 24px;
+  }
+}
+@media (min-width: 900px) {
   .layout-b_slot-2 {
     margin-left: 180px;
     padding-left: 24px;
     overflow: hidden;
-  }
-}
-@media (min-width: 860px) {
-  .layout-b_slot-2 {
-    margin-right: 180px;
-    padding-right: 24px;
   }
 }
 
@@ -862,7 +914,7 @@ pre code {
 .layout-b_slot-3 {
   display: none;
 }
-@media (min-width: 860px) {
+@media (min-width: 600px) {
   .layout-b_slot-3 {
     display: block;
     float: right;

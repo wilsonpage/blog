@@ -6,15 +6,17 @@ title: Wilson Page
 <ul class="posts">
   {% for post in site.posts %}
     <li class="index-post">
-      <div class="index-post_slot-1">
-        <aside>{{ post.date | date_to_long_string }}</aside>
-      </div>
-      <div class="index-post_slot-2">
-        <a class="inner" href="{{ post.url }}">
-          <h2 class="index-post_title">{{ post.title }}</h2>
-          <div class="index-post_excerpt">{{ post.excerpt }}</div>
-        </a>
-      </div>
+      <a class="inner" href="{{ post.url }}">
+        <div class="index-post_slot-1">
+          <aside>{{ post.date | date_to_long_string }}</aside>
+        </div>
+        <div class="index-post_slot-2">
+          <div class="inner">
+            <h2 class="index-post_title">{{ post.title }}</h2>
+            <div class="index-post_excerpt">{{ post.excerpt }}</div>
+          </div>
+        </div>
+      </a>
     </li>
   {% endfor %}
 </ul>

@@ -8,6 +8,7 @@ $aside-width: 180px;
  ---------------------------------------------------------*/
 
 $padding: 24px;
+$padding-300: $padding * 3;
 $padding-200: $padding * 2;
 $padding-150: $padding * 1.5;
 $padding-75: $padding * 0.75;
@@ -22,7 +23,8 @@ $border-dotted: 1px dotted #DDD;
 /** Breakpoint
  ---------------------------------------------------------*/
 
-$br-large: 700px;
+$br-medium: 600px;
+$br-large: 900px;
 
 /** Colors
  ---------------------------------------------------------*/

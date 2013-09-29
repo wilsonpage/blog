@@ -68,15 +68,16 @@ $post-meta-title-height: 47px;
 
 .layout-b_slot-2 {
 
+  @include medium {
+    margin-right: $aside-width;
+    padding-right: $padding;
+  }
+
+
   @include large {
     margin-left: $aside-width;
     padding-left: $padding;
     overflow: hidden;
-  }
-
-  @media (min-width:860px) {
-    margin-right: $aside-width;
-    padding-right: $padding;
   }
 }
 
@@ -87,7 +88,7 @@ $post-meta-title-height: 47px;
   display: none;
 
 
-  @media (min-width:860px) {
+  @include medium {
     display: block;
     float: right;
     width: $aside-width;
