@@ -1,5 +1,5 @@
 name: Wilson Page
-description: A description for your blog
+description: "Wilson is a front-end developer at <a href='http://twitter.com/ftlabs'>FT Labs</a>, within the Financial Times."
 url: http://wilsonpage.co.uk
 permalink: /:title
 markdown: redcarpet
