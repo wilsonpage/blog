@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Object.create()"
+title: "Object.create"
 date: 2013-09-30 22:05
 tags: javascript
 ---
