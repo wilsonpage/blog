@@ -98,17 +98,27 @@ a:hover {
 /** Title
  ---------------------------------------------------------*/
 .site-title {
-  text-align: center;
+  margin-bottom: 12px;
+  text-align: left;
+  border-bottom: 1px dotted #dddddd;
+  padding-bottom: 12px;
   font-family: 'times new roman';
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 12px;
   color: red;
   font-size: 16px;
-  padding: 24px 0 52px;
 }
 .site-title a {
   color: inherit;
+}
+@media (min-width: 600px) {
+  .site-title {
+    padding: 24px 0 52px;
+    border: 0;
+    margin: 0;
+    text-align: center;
+  }
 }
 
 .highlight {
@@ -666,7 +676,7 @@ pre code {
 
 .share li, .follow li {
   float: left;
-  width: 33.33%;
+  margin-right: 24px;
   margin-bottom: 6px;
   /**
    * @hover
