@@ -15,6 +15,7 @@ I sent out a plea for help on Twitter, thankfully [https://twitter.com/gauntface
 <div>&mdash; Matt Gaunt (@gauntface)</div>
 <div><a href="https://twitter.com/gauntface/statuses/365137909680046080">August 7, 2013</a></div>
 </blockquote>
+<script charset="utf-8" src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
 
 ### Why was Chrome cancelling my touch events?
 
@@ -35,5 +36,3 @@ To achieve the desired result I will now have to use synthetic JavaScript powere
 ### Looking forward
 
 I understand handling custom and default responses to touch event must be a tricky one to manage for browsers. I'm just writing this up to highlight a use case that requires both responses. Microsoft's `[http://msdn.microsoft.com/en-us/library/windows/apps/hh767313.aspx](-ms-touch-action)` property from the [http://www.w3.org/Submission/pointer-events/](Pointer Events spec) does a good job giving developers control over how touches are handled by the browser, and could end up working its way into the other major browsers.
-
-<script charset="utf-8" src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
