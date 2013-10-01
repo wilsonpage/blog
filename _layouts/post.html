@@ -24,6 +24,7 @@ layout: default
   <div class="layout-b_slot-2">
     <div class="post">
       <h2 class="post_title">{{ page.title }}</h2>
+      {% if page.image %}<img class="post_image" src="{{ page.image }}" />{% endif %}
       <div class="post_content">{{ content }}</div>
       <div id="disqus_thread"></div>
          <script type="text/javascript">
