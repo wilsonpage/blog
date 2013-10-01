@@ -3,9 +3,8 @@ layout: post
 title:  "Introducing 'layout boundaries'"
 date:   2013-08-18 19:31:19
 tags: layout performance css
+image: /lib/images/tumblr_inline_mrr2eg96tU1qz4rgp.jpg
 ---
-![](/lib/images/tumblr_inline_mrr2eg96tU1qz4rgp.jpg)
-
 **'Layout' is the process a browser undergoes to calculate the position and size of each element in a document before it can start painting pixels.** The process of layout can be costly, especially on low powered mobile devices.
 
 As considerate front-end developers, it is our job to keep layouts to minimum to ensure our apps remain snappy.At some point though, layout has to be done. DOM structure changes, changes to dimensions or position of elements, and requests for element position or size via JavaScript, can all trigger layout.
