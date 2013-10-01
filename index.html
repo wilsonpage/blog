@@ -12,7 +12,8 @@ layout: layout-a
         <div class="index-post_slot-2">
           <div class="inner">
             <h2 class="index-post_title">{{ post.title }}</h2>
-            <div class="index-post_excerpt">{{ post.excerpt }}</div>
+            {% if post.image %}<img src="{{ post.image }}" />{% endif %}
+            <div class="index-post_excerpt">{{ post.excerpt | strip_html }}</div>
           </div>
         </div>
       </a>
