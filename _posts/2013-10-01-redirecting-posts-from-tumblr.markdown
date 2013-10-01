@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Redirecting posts from Tumblr"
-date:   2013-10-01 10:29
+title: "Redirecting posts from Tumblr"
+date: 2013-10-01 10:29
 tags: tumblr blogs
 ---
 As you may know I have recently migrated my blog from [Tumblr](http://tumblr.com) to a custom [Jekyll](http://jekyll.org) solution hosted on [GitHub Pages](http://pages.github.com). My main issue was redirecting traffic from old links to my new domain and URL schema. The URL changed as follows:
@@ -19,11 +19,11 @@ The former is not ideal as crawlers/bots are unlikely to follow JavScript redire
 
 The only variables I could define myself were the post Title and Body. I decided to abuse the Post Title as my own custom variable.
 
-[Insert image of changing post title]
+![](/lib/images/redirecting-posts-from-tumblr_image-1.png)
 
 I can use my custom variable inside the page html template as the URL path inside the meta refresh tag.
 
-[Insert image of changing custom html]
+![](/lib/images/redirecting-posts-from-tumblr_image-2.png)
 
 If the page is a post page the user is redirected to `wilsonpage.co.uk/<POST-TITLE>`. If it's not a post page, they are simply redirected to `wilsonpage.co.uk`. It doesn't really matter that the Tumblr post titles are not as pretty now, as no-one will be reading them anyway.
 
