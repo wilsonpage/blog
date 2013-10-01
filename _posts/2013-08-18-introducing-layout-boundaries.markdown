@@ -2,7 +2,7 @@
 layout: post
 title:  "Introducing 'layout boundaries'"
 date:   2013-08-18 19:31:19
-tags: git
+tags: layout performance css
 ---
 ![](/lib/images/tumblr_inline_mrr2eg96tU1qz4rgp.jpg)
 
