@@ -533,6 +533,9 @@ aside > :first-child {
 .post_content > * {
   margin-bottom: 24px;
 }
+.post_content iframe[class*="twitter-tweet"] {
+  margin-bottom: 24px !important;
+}
 .post_content > :last-child {
   margin-bottom: 0;
 }

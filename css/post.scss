@@ -68,6 +68,10 @@
     margin-bottom: $padding;
   }
 
+  iframe[class*="twitter-tweet"] {
+    margin-bottom: $padding !important;
+  }
+
   > :last-child {
     margin-bottom: 0;
   }
