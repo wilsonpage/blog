@@ -11,7 +11,7 @@ As you may know I have recently migrated my blog from [Tumblr](http://tumblr.com
 For obvious reasons Tumblr doesn't really help you redirecting away from their site. This means we have two solutions:
 
 1. JavaScript redirects (`window.location.href = 'http://example.com';`)
-2. Meta refresh redirects (`<meta type="refesh" content="0;'http://example.com'" />`)
+2. Meta refresh redirects (`<meta http-equiv="refesh" content="0;'http://example.com'" />`)
 
 The former is not ideal as crawlers/bots are unlikely to follow JavScript redirects. The later is tricky as tumblr doesn't give me the ability to manipulate strings in their templating language to allow me to transform the Tumblr URL into my new URL. I needed the ability to dynamically transform the URL on the server-side, or just manually define a server-side variable containing the new URL for each post.
 
