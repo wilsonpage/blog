@@ -46,8 +46,6 @@ element4.style.height = h2;
 
 In reality this isn't so simple. Large applications have code scattered all over the place, all of which has that dangerous DOM at its finger tips. We can't easily (and definitely shouldn't) mash up all our pretty, decoupled code, just so we have control over execution order. What can we do to batch our reads and writes together for optimal performance?
 
-We could write a batching library that DOM touching modules of our app can use to put jobs into a queue? But that then introduces more dependencies into our code base. It would also be tricky knowing when to run the batches.
-
 ### Enter requestAnimationFrame
 
 `window.requestAnimationFrame` schedules a function to be executed at the next frame, similar to `setTimeout(fn, 0)`. This is super useful because we can use it to schedule all our DOM writes to run together in the next frame, leaving all DOM reads to run in the current synchronous turn.
