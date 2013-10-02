@@ -59,6 +59,8 @@
  ---------------------------------------------------------*/
 
 .post_image {
+  max-width: 100%;
+  border: 1px solid #ddd;
   margin-bottom: $padding;
 }
 
