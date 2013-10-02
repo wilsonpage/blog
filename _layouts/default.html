@@ -32,25 +32,26 @@
     </div>
     <script>
       (function() {
-        var body = document.body;
+        // var body = document.body;
 
-        function debounce(fn) {
-          var timer;
-          return function() {
-            var args = arguments;
-            clearTimeout(timer);
-            timer = setTimeout(function() {
-              fn.apply(this, args);
-            }, 30);
-          }
-        }
+        // function debounce(fn) {
+        //   var timer;
+        //   return function() {
+        //     var args = arguments;
+        //     clearTimeout(timer);
+        //     timer = setTimeout(function() {
+        //       fn.apply(this, args);
+        //     }, 30);
+        //   }
+        // }
 
 
-        window.addEventListener('scroll', debounce(function(e) {
-          var y = window.scrollY;
-          body.classList.toggle('scroll-gt60', y > 60);
-        }));
+        // window.addEventListener('scroll', debounce(function(e) {
+        //   var y = window.scrollY;
+        //   body.classList.toggle('scroll-gt60', y > 60);
+        // }));
 
+        // Click post title to go to top
         var postMetaTitle = document.querySelector('.js-post-meta-title');
         if (postMetaTitle) {
           postMetaTitle.addEventListener('click', function() {
