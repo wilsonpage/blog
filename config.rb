@@ -1,2 +1,2 @@
 css_dir = 'css'
-fonts_dir = 'static/fonts'
+fonts_dir = 'lib/fonts'

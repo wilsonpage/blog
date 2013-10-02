@@ -7,7 +7,7 @@ redcarpet:
   extensions: ["tables"]
 pygments: true
 exclude: [
-  'css',
+  'components',
   'node_modules',
   'GruntFile.js',
   'package.json'
