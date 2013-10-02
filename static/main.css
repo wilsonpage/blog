@@ -81,7 +81,7 @@ a {
   margin: 0 auto;
   padding: 0 24px;
 }
-@media (min-width: 900px) {
+@media (min-width: 880px) {
   .site {
     padding: 48px 0 200px;
   }
@@ -767,7 +767,7 @@ pre code {
 .index-post_slot-1 aside {
   padding-top: 0;
 }
-@media (min-width: 900px) {
+@media (min-width: 880px) {
   .index-post_slot-1 {
     float: left;
     width: 180px;
@@ -792,7 +792,7 @@ pre code {
     border: 0;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 880px) {
   .index-post_slot-2 {
     margin-left: 180px;
     padding-left: 24px;
@@ -828,7 +828,7 @@ pre code {
    * @large
    */
 }
-@media (min-width: 900px) {
+@media (min-width: 880px) {
   .footer {
     position: absolute;
     left: 0;
@@ -925,7 +925,7 @@ pre code {
 .layout-b .post-meta_title {
   display: none;
 }
-@media (min-width: 900px) {
+@media (min-width: 880px) {
   .layout-b .bio,
   .layout-b .share,
   .layout-b .follow,
@@ -943,7 +943,7 @@ pre code {
    * @large
    */
 }
-@media (min-width: 900px) {
+@media (min-width: 880px) {
   .layout-b_slot-1 {
     -webkit-transition: -webkit-transform 200ms;
     -moz-transition: -moz-transform 200ms;
@@ -969,7 +969,7 @@ pre code {
     padding-right: 24px;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 880px) {
   .layout-b_slot-2 {
     margin-left: 180px;
     padding-left: 24px;
