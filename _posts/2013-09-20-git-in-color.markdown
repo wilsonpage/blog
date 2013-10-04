@@ -7,5 +7,5 @@ tags: git
 By default git has no coloured output. Quickly improve the situation with:
 
 {% highlight bash %}
-$ git config --global --add color.ui true
+$ git config --global --add color.ui auto
 {% endhighlight %}
