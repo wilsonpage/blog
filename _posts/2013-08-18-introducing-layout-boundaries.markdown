@@ -15,15 +15,19 @@ As considerate front-end developers, it is our job to keep layouts to minimum to
 
 With a few small CSS tweaks we are able to enforce layout boundaries in our document. This means that if any layout forcing changes are made inside the scope of a layout boundary element, only a 'partial reflow' is required, and this is a lot cheaper!
 
-### Required CSS
+### To be a layout boundary, the element must:
 
-I have found that having the following properties set determines whether an element can act as a layout boundary:
+* Be an SVG root (`<svg>`).
+* Be a text or search `<input>` field.
 
-- **display:** block;
-- **position:** relative | absolute;
-- **overflow:** hidden;
-- **height:** (can't be percentage value);
-- **width:** (only required if position absolute);
+or:
+
+* Not be display `inline` or `inline-block`
+* Not have a percentage height value.
+* Not have an implicit or `auto` height value.
+* Not have an implicit or `auto` width value.
+* Have an explicit overflow value (`scroll`, `auto` or `hidden`).
+* Not be a descendant of a `<table>` element.
 
 ### Facebook example
 
