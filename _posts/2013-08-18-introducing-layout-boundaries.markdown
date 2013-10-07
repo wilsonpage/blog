@@ -29,6 +29,8 @@ or:
 * Have an explicit overflow value (`scroll`, `auto` or `hidden`).
 * Not be a descendant of a `<table>` element.
 
+[Paul Lewis'](http://twitter.com/aerotwist) [Boundarizr](https://github.com/paullewis/Boundarizr/) tool can be used to highlight which elements in your app are acting as 'layout boundaries'.
+
 ### Facebook example
 
 To prove my point I have found a layout case on Facebook that could be optimised. When the auto-complete search drop-down is opened we can see in the timeline quite aggressive layout thrashing as elements are inserted and manipulated in the list.
