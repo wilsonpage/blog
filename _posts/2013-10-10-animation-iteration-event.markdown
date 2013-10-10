@@ -22,13 +22,13 @@ One thing that has always bothered me about this is that once the loading has fi
 
 ### A helpful event
 
+The `animationiteration` iteraction event will fire every time a currently animating element completes an iteration.
+
 {% highlight javascript %}
 div.addEventListener('animationiteration', function() {
   console.log('tick');
 });
 {% endhighlight %}
-
-The `animationiteration` iteraction event will fire every time a currently animating element completes an iteration.
 
 ### Solving the problem
 
