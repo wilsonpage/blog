@@ -75,7 +75,7 @@ This means we can keep our nicely encapsulated code where it is, and with a smal
 I created a [working example](http://jsbin.com/ebicuJu/2/edit?js,output) to prove the concept. In the first screen shot you can see the aggressive layout thrashing in the Chrome Timeline.
 
 | **Before** | **After** |
-| -----------|-----------|
+|:------------|:-----------|
 | ![](/lib/images/tumblr_inline_mrsskjBm1a1qz4rgp.png) | ![](/lib/images/tumblr_inline_mrssloEy7I1qz4rgp.png) |
 
 Following our `requestAnimationFrame` alterations only one layout event took place, and as a result the operation was **~96% faster!**
