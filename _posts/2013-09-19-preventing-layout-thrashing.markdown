@@ -132,6 +132,11 @@ To work around this I like to use an [event system](http://github.com/wilsonpage
 
 Also we are **increasing the amount of code** we have to write to effectively get the same amount of work done. Personally I think this is a small price to pay for a dramatic increase in performance.
 
+### FastDom examples
+
+- [Animation example](http://wilsonpage.github.io/fastdom/examples/animation.html)
+- [Aspect ratio example](http://wilsonpage.github.io/fastdom/examples/aspect-ratio.html)
+
 ### Improving FastDom
 
 Web apps are lacking a clear way of solving the problem of layout thrashing. As an app grows it gets harder to coordinate all the different parts to ensure a fast end product. If [FastDom](http://github.com/wilsonpage/fastdom) can help provide a simple interface for developers to solve this problem, it can only mean good things.
