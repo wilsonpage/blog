@@ -5,7 +5,7 @@ date: 2013-10-10 09:31
 tags: javascript events css
 ---
 
-Using CSS animations you can spin any element you wish. This is useful if you wish to roll your own loading indicator for example.
+In the past I have used CSS Animations to roll my own loading spinners. I prefer using CSS animations as I can get a smoother frame rate, without the need for any clunky gif assets.
 
 {% highlight css %}
 div.spin {
@@ -22,7 +22,7 @@ One thing that has always bothered me about this is that once the loading has fi
 
 ### A helpful event
 
-The `animationiteration` iteraction event will fire every time a currently animating element completes an iteration.
+The `animationiteration` event will fire every time a currently animating element completes an iteration.
 
 {% highlight javascript %}
 div.addEventListener('animationiteration', function() {
