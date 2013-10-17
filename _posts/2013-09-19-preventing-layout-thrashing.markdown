@@ -4,27 +4,33 @@ title:  "Preventing 'layout thrashing'"
 date:   2013-09-19 12:00:00
 tags: git
 ---
-Layout Thrashing is when JavaScript violently writes, then reads, from the DOM, multiple times causing document reflows.
+Layout Thrashing occurs when JavaScript violently writes, then reads, from the DOM, multiple times causing document reflows.
 
 {% highlight javascript %}
 // Read
-var h1 = element1.clientHeight + 'px';
+var h1 = element1.clientHeight;
 
-// Write
-element2.style.height = h1;
+// Write (invalidates layout)
+element1.style.height = (h1 * 2) + 'px';
 
-// Document reflow...
+// Read (triggers layout)
+var h2 = element2.clientHeight;
 
-// Read
-var h2 = element3.clientHeight + 'px';
+// Write (invalidates layout)
+element2.style.height = (h2 * 2) + 'px';
 
-// Write
-element4.style.height = h2;
+// Read (triggers layout)
+var h3 = element3.clientHeight;
 
-// Document reflow...
+// Write (invalidates layout)
+element3.style.height = (h3 * 2) + 'px';
 {% endhighlight %}
 
-This may not cause a drastic performance hit on modern desktop browsers; but can have **severe consequences running on low powered mobile devices**.
+When the DOM is written to, layout is 'invalidated', and at some point needs to be reflowed. The browser is lazy and wants to wait until the end of current operation (or frame) to perform this reflow.
+
+Although, if we ask for a geometric value back from the DOM before the current operation (or frame) is complete, we **force the browser to perform layout early**, this is known as **'forced synchonous layout'**, and it kills performance!
+
+The side effects of layout thrashing on modern desktop browsers is not always obvious; but has **severe consequences on low powered mobile devices**.
 
 ### Quick fix?
 
@@ -32,14 +38,16 @@ In an ideal world we would simply re-order the execution so that we can batch th
 
 {% highlight javascript %}
 // Read
-var h1 = element1.clientHeight + 'px';
-var h2 = element3.clientHeight + 'px';
+var h1 = element1.clientHeight;
+var h2 = element2.clientHeight;
+var h3 = element3.clientHeight;
 
-// Write
-element2.style.height = h1;
-element4.style.height = h2;
+// Write (invalidates layout)
+element1.style.height = (h1 * 2) + 'px';
+element2.style.height = (h2 * 2) + 'px';
+element3.style.height = (h3 * 2) + 'px';
 
-// Document reflow...
+// Document reflows at end of frame
 {% endhighlight %}
 
 ### What about in the real world?
@@ -52,19 +60,19 @@ In reality this isn't so simple. Large applications have code scattered all over
 
 {% highlight javascript %}
 // Read
-var h1 = element1.clientHeight + 'px';
+var h1 = element1.clientHeight;
 
 // Write
 requestAnimationFrame(function() {
-  element2.style.height = h1;
+  element1.style.height = (h1 * 2) + 'px';
 });
 
 // Read
-var h2 = element3.clientHeight + 'px';
+var h2 = element2.clientHeight;
 
 // Write
 requestAnimationFrame(function() {
-  element4.style.height = h2;
+  element2.style.height = (h2 * 2) + 'px';
 });
 {% endhighlight %}
 
@@ -88,15 +96,15 @@ In our app we may need to read from the DOM *after* we have done our write, and 
 
 {% highlight javascript %}
 // Read
-var h1 = element1.clientHeight + 'px';
+var h1 = element1.clientHeight;
 
 // Write
 requestAnimationFrame(function() {
-  element2.style.height = h1;
+  element1.style.height = (h1 * 2) + 'px';
 
   // We may want to read the new
   // height after it has been set
-  var height = element2.clientHeight;
+  var height = element1.clientHeight;
 });
 {% endhighlight %}
 
@@ -104,20 +112,20 @@ We could push the read into another `requestAnimationFrame` but then we cannot g
 
 ### Introducing 'FastDom'
 
-[FastDom](http://github.com/wilsonpage/fastdom) is a small library I wrote to provide a common interface for batching of DOM read/write work. It massively speeds up DOM work using similar `requestAnimationFrame` techniques described above.
+[FastDom](http://github.com/wilsonpage/fastdom) is a small library I wrote to provide a common interface for batching DOM read/write work. It massively speeds up DOM work using similar `requestAnimationFrame` techniques described above.
 
 {% highlight javascript %}
 fastdom.read(function() {
-  var h1 = element1.clientHeight + 'px';
+  var h1 = element1.clientHeight;
   fastdom.write(function() {
-    element2.style.height = h1;
+    element1.style.height = (h1 * 2) + 'px';
   });
 });
 
 fastdom.read(function() {
-  var h2 = element3.clientHeight + 'px';
+  var h2 = element2.clientHeight;
   fastdom.write(function() {
-    element4.style.height = h2;
+    element2.style.height = (h1 * 2) + 'px';
   });
 });
 {% endhighlight %}
