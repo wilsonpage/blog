@@ -60,6 +60,4 @@ The `animationiteration` event is well supported in modern browsers using the fo
 | **Webkit** | `webkitAnimationIteration` |
 | **IE10** | `MSAnimationIteration` |
 
-### Demo
-
-[Here is a demo](http://jsbin.com/AwoYuxE/2) I made to demonstrate a use case.
+<a class="button" href="http://jsbin.com/AwoYuxE/2">Demo</a>

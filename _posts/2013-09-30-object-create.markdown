@@ -46,4 +46,4 @@ The second argument is not too exciting; it works as a convenient shortcut to `O
 
 I won’t go over the API for `Object.defineProperties` in this article, but you can read all about it on our ever trustworthy [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties).
 
-**[Working demo](http://jsbin.com/AduCiZA/1/edit?js,console)**
+<a class="button" href="http://jsbin.com/AduCiZA/1/edit?js,console">Demo</a>
