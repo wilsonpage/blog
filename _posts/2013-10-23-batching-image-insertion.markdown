@@ -71,7 +71,7 @@ function injectBatch(batch) {
 }
 {% endhighlight %}
 
-Now our timeline looks a little different. You can see that the expensive image work is spread over about five frames instead of one, and we are not longer blowing exceeding the 60fps threshold.
+Now our timeline looks a little different. You can see that the expensive image work is spread over about five frames instead of one, and we are not longer blowing the 60fps threshold.
 
 [![](/lib/images/batching-image-insertion-2.png)](/lib/images/batching-image-insertion-2.png)
 
@@ -79,4 +79,4 @@ Now our timeline looks a little different. You can see that the expensive image 
 
 This is just one of the useful applications for the [FastDom](http://github.com/wilsonpage/fastdom)'s `.defer` API. Timeline your app and check for where you are blowing your frame budget.
 
-If you're ['layout thrashing'](/preventing-layout-thrashing) you should look into `fastdom.read` and `fastdom.write`, if you're simply doing too much in one frame think about spreading your work over several frames.
+If you're ['layout thrashing'](/preventing-layout-thrashing) you should look into `fastdom.read` and `fastdom.write`, if you're simply doing too much in one frame think about **spreading your work over several frames**.
