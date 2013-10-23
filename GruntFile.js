@@ -50,7 +50,7 @@ module.exports = function(grunt) {
     watch: {
       jekyll: {
         files: [
-          '_posts/*.markdown',
+          '**/*.markdown',
           '_includes/*.html',
           '_layouts/*.html',
           '*.html'
