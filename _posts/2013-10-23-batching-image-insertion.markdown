@@ -48,7 +48,7 @@ var batchSize = 6;
 var batch;
 
 // Break down list into batches
-for (vari = 0, l = placeholders.length; i < l; i += batchSize) {
+for (var i = 0, l = placeholders.length; i < l; i += batchSize) {
   batch = images.slice(i, i + batchSize);
   injectBatch(batch);
 }
