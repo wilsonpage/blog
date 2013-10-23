@@ -1,0 +1,34 @@
+
+.button {
+  display: inline-block;
+  padding: $padding-25 $padding-50;
+  background-color: #FF7676;
+  border: solid 1px rgba(0,0,0,0.16);
+  border-radius: 3px;
+  color: #FFF;
+  opacity: 1;
+  font-weight: bold;
+  text-align: center;
+
+  /** Icon
+   ---------------------------------------------------------*/
+
+  &:after {
+    display: inline-block;
+    font-family: 'entypo';
+    content: "\e601";
+    margin-left: $padding-25;
+    vertical-align: middle;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /**
+   * @hover
+   */
+
+  &:hover {
+    background-color: #FF6262;
+  }
+}
