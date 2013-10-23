@@ -118,6 +118,14 @@
     border: 1px solid #ddd;
   }
 
+  blockquote {
+    padding: $padding-50 $padding-75;
+    font: italic 1em/1.4em 'Times New Roman';
+    color: #333;
+    background: $color-grey;
+    border: 1px solid #ddd;
+  }
+
   /**
    * @medium
    */
