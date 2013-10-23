@@ -586,7 +586,6 @@ aside > :first-child {
 }
 .post_content > :last-child {
   margin-bottom: 0;
-  padding-bottom: 0;
 }
 .post_content h3 {
   padding-bottom: 24px;
@@ -607,6 +606,13 @@ aside > :first-child {
 }
 .post_content img {
   max-width: 100%;
+  border: 1px solid #ddd;
+}
+.post_content blockquote {
+  padding: 12px 18px;
+  font: italic 1em/1.4em 'Times New Roman';
+  color: #333;
+  background: #f8f8f8;
   border: 1px solid #ddd;
 }
 @media (min-width: 700px) {
