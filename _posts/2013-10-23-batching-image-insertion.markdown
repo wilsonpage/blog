@@ -7,7 +7,7 @@ tags: performance javascript
 
 One of the most expensive things we do inside the FT Web App is insert base64 encoded images into the DOM. You can easily blow your frame budget (16ms) if you try to insert too many images in one go. Below is a timeline showing one particular frame being smashed when a load of images get inserted into the DOM.
 
-[![](lib/images/batching-image-insertion-1.png)](lib/images/batching-image-insertion-1.png)
+[![](/lib/images/batching-image-insertion-1.png)](/lib/images/batching-image-insertion-1.png)
 
 In this simplified version of the code, we have a list of image objects. We loop over these objects, create an image node for each, set the `src` to the base64 data URI string, and then insert it into the DOM.
 
@@ -73,7 +73,7 @@ function injectBatch(batch) {
 
 Now our timeline looks a little different. You can see that the expensive image work is spread over about five frames instead of one, and we are not longer blowing exceeding the 60fps threshold.
 
-[![](lib/images/batching-image-insertion-2.png)](lib/images/batching-image-insertion-2.png)
+[![](/lib/images/batching-image-insertion-2.png)](/lib/images/batching-image-insertion-2.png)
 
 ### Conclusion
 
