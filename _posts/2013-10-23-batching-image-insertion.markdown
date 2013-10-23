@@ -5,7 +5,7 @@ date: 2013-10-23 19:09:00
 tags: performance javascript
 ---
 
-One of the most expensive things we do inside the FT Web App is insert base64 encoded images into the DOM. You can easily blow your frame budget (16ms) if you try to insert too many images in one go. Below is a timeline showing one particular frame being smashed when a load of images get inserted into the DOM.
+One of the most expensive things we do inside our web app is insert base64 encoded images into the DOM. You can easily blow your frame budget (16ms) if you try to insert too many images in one go. Below is a timeline showing one particular frame being smashed when a load of images get inserted into the DOM.
 
 [![](/lib/images/batching-image-insertion-1.png)](/lib/images/batching-image-insertion-1.png)
 
