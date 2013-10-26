@@ -23,7 +23,7 @@ function inject(image) {
 
 ### Spreading the load
 
-**The technique above doesn't scale**. The more images we have to insert, the worse our rendering performance gets. If we could find a way to take work off this single frame and spread it over more frames we may be able to reach a better frame rate. [FastDom](http://github.com/wilsonpage/fastdom) can help us with this.
+**The technique above doesn't scale**. The more images we have to insert, the worse our rendering performance gets. If we could find a way to take work off this single frame and spread it over more frames, we may be able to reach a better frame rate. [FastDom](http://github.com/wilsonpage/fastdom) can help us with this.
 
 ### fastdom.defer()
 
