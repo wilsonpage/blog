@@ -12,11 +12,13 @@ One of the most expensive things we do inside our web app is insert base64 encod
 In this simplified version of the code, we have a list of image objects. We loop over these objects, create an image node for each, set the `src` to the base64 data URI string, and then insert it into the DOM.
 
 {% highlight javascript %}
-images.forEach(function(image) {
+images.forEach(inject);
+
+function inject(image) {
   var el = document.createElement('img');
   el.src = image.src;
   document.body.appendChild(el);
-});
+}
 {% endhighlight %}
 
 ### Spreading the load
@@ -53,27 +55,29 @@ for (var i = 0, l = placeholders.length; i < l; i += batchSize) {
   injectBatch(batch);
 }
 
-/**
- * Injects a batch of
- * images in the next
- * available frame.
-
- * @param  {Array} batch
- */
+// Schedules a batch
+// for the *next* frame
 function injectBatch(batch) {
   fastdom.defer(function() {
-    batch.forEach(function(image) {
-      var el = document.createElement('img');
-      el.src = image.src;
-      document.body.appendChild(el);
-    });
-  })
+    batch.forEach(inject);
+  });
+}
+
+// Injects an image
+function inject(image) {
+  var el = document.createElement('img');
+  el.src = image.src;
+  document.body.appendChild(el);
 }
 {% endhighlight %}
 
 Now our timeline looks a little different. You can see that the expensive image work is spread over about five frames instead of one, and we are not longer blowing the 60fps threshold.
 
 [![](/lib/images/batching-image-insertion-2.png)](/lib/images/batching-image-insertion-2.png)
+
+### Batch size
+
+In my example I used a batch size of 6. This isn't a magic number, I simply used the timeline to determine an appropriate number for my case. You should profile your own image insertion and find a batch size you're happy with.
 
 ### Conclusion
 
