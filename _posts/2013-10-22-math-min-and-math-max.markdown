@@ -5,7 +5,7 @@ date: 2013-10-22 22:17:00
 tags: javascript
 ---
 
-You've probably heard of and used the `Math.min` and `Math.max` functions in JavaScript before, there pretty self explanatory.
+You've probably heard of and used the `Math.min` and `Math.max` functions in JavaScript before, they're pretty self explanatory.
 
 {% highlight javascript %}
 Math.min(5, 10); //=> 5
