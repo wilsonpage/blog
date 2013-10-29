@@ -497,7 +497,8 @@ aside > :first-child {
 }
 
 .post h2,
-.post h3 {
+.post h3,
+.post h4 {
   margin-bottom: -0.18em;
 }
 
@@ -587,7 +588,12 @@ aside > :first-child {
 .post_content > :last-child {
   margin-bottom: 0;
 }
-.post_content h3 {
+.post_content strong {
+  font-weight: 500;
+  color: #222222;
+}
+.post_content h3,
+.post_content h4 {
   padding-bottom: 24px;
   font-weight: 300;
   font-size: 22px;
@@ -617,7 +623,10 @@ aside > :first-child {
 }
 @media (min-width: 700px) {
   .post_content h3 {
-    font-size: 28px;
+    font-size: 29px;
+  }
+  .post_content h4 {
+    font-size: 22px;
   }
 }
 
