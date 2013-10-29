@@ -50,7 +50,8 @@ module.exports = function(grunt) {
     watch: {
       jekyll: {
         files: [
-          '**/*.markdown',
+          '_drafts/*.markdown',
+          '_posts/*.markdown',
           '_includes/*.html',
           '_layouts/*.html',
           '*.html'
@@ -61,7 +62,7 @@ module.exports = function(grunt) {
         },
       },
       css: {
-        files: '**/*.scss',
+        files: 'lib/**/*.scss',
         tasks: ['sass:dist2'],
         options: {
           livereload: true,
