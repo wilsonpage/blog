@@ -791,9 +791,6 @@ pre code {
 .index-post > .inner:hover {
   color: #000;
 }
-.index-post img {
-  max-width: 100%;
-}
 .index-post:last-child {
   margin: 0;
   padding: 0;
@@ -863,6 +860,13 @@ pre code {
   .index-post_title {
     font-size: 32px;
   }
+}
+
+/** Image
+ ---------------------------------------------------------*/
+.index-post_image {
+  max-width: 100%;
+  margin-bottom: 12px;
 }
 
 /**

@@ -16,10 +16,6 @@
     }
   }
 
-  img {
-    max-width: 100%;
-  }
-
   /**
    * @last-child
    */
@@ -105,4 +101,12 @@
   @include medium {
     font-size: 32px;
   }
+}
+
+/** Image
+ ---------------------------------------------------------*/
+
+.index-post_image {
+  max-width: 100%;
+  margin-bottom: $padding-50;
 }
