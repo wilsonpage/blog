@@ -26,7 +26,7 @@ Let's colour the next div after `.a` green.
 }
 {% endhighlight %}
 
-<a class="button" href="http://jsbin.com/AXIMUtO/1/edit">Adjacent sibling demo</a>
+<a class="button" href="http://jsbin.com/AXIMUtO/3/edit">Adjacent sibling demo</a>
 
 ### General sibling (~)
 
@@ -47,7 +47,7 @@ Let's colour all the divs after `.a` green.
 }
 {% endhighlight %}
 
-<a class="button" href="http://jsbin.com/AXIMUtO/1/edit">General sibling demo</a>
+<a class="button" href="http://jsbin.com/OYEwOwe/1/edit">General sibling demo</a>
 
 ### Use case: Markup dependent styling
 
