@@ -47,7 +47,7 @@ Let's colour all the divs after `.a` green.
 }
 {% endhighlight %}
 
-<a class="button" href="http://jsbin.com/OYEwOwe/1/edit">General sibling demo</a>
+<a class="button" href="http://jsbin.com/OYEwOwe/2/edit">General sibling demo</a>
 
 ### Use case: Markup dependent styling
 
