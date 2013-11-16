@@ -123,6 +123,14 @@
   img {
     max-width: 100%;
     border: 1px solid #ddd;
+
+    /**
+     * @no-border
+     */
+
+    &.no-border {
+      border: 0;
+    }
   }
 
   blockquote {

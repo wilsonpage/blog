@@ -613,6 +613,12 @@ aside > :first-child {
 .post_content img {
   max-width: 100%;
   border: 1px solid #ddd;
+  /**
+   * @no-border
+   */
+}
+.post_content img.no-border {
+  border: 0;
 }
 .post_content blockquote {
   padding: 12px 18px;
