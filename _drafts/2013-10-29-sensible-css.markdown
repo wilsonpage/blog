@@ -58,32 +58,7 @@ $color-warm-grey-2: #74736C;
 
 It's now a breeze if your designer wants to alter the color pallet slightly.
 
-### Dividers
 
-Files will consist of different parts. I use a standard divider comment to clearly split these parts out, this makes finding things quicker.
-
-{% highlight scss %}
-
-/**
- * Header
- *
- * The main header of my app.
- */
-
-.header {}
-
-/** Links
- ---------------------------------------------------------*/
-
-.header_links {}
-
-/** Search
- ---------------------------------------------------------*/
-
-.header_search {}
-{% endhighlight %}
-
-Make sure that what ever you choose to be your divider is a 'snippet' in all dev's code editors. To insert a divider in my editor (Sublime Text) all I have to do is type `'div'` + `tab`, and it prints it for me. [Find out how to setup snippets in Sublime Text 2](http://docs.sublimetext.info/en/sublime-text-3/extensibility/snippets.html).
 
 ### Modules (OOCSS)
 
@@ -95,59 +70,6 @@ With CSS preprocessors comes the ability to nest selectors. With all new things,
 
 This is good for selector matching performance (negligible) and means elements remain portable. By 'portable' I mean that if markup changes slightly, you don't have to go through altering selectors that were previously very specific, so that they match the new document structure.
 
-### Declaring 'overrides'
-
-In applications it is very common to have elements that have a default appearance, but then need to look different when the app is in a certain 'state'. There are good and bad ways of managing CSS when writing 'styling overrides'.
-
-#### How not to do it
-
-The approach I **strongly advise against** is the 'scattered everywhere' approach. By this I mean you may find your default styling for an element in its file (eg. `header.scss`), then throughout the application you find rules in other files messing with the default styling. The all too common `mobile.scss` and `ie.scss` spring to mind here.
-
-**This is a nightmare to manage!** You have rules that style one particular element, scattered all over your CSS code base. This prevents anyone opening `header.scss` and seeing all the styles that will affect the appearance of the header, they don't know about other rules that may be hiding in other files. It also means that your cascade order is at the whim of the order the files are concatenated in. It's all dangerous stuff!
-
-#### How I do it
-
-I enforce the convention that **all styles for a particular element must be in the same place**. I use SASS nesting, the `&` parent selector to visually contain all the style variations for a particular element. I also use an `@state` comments to clearly indicate where I'm overriding default styling.
-
-Let me demonstrate with a few examples.
-
-{% highlight scss %}
-.button {
-  padding: $padding;
-  background: pink;
-
-  /**
-   * @hover
-   */
-
-  &:hover {
-    background: red;
-  }
-
-  /**
-   * @large
-   *
-   * The button is bigger
-   * on large screens.
-   */
-
-  @media (min-width: 700px) {
-    padding: $padding-200;
-  }
-
-  /**
-   * @logged-in
-   *
-   * The button is hidden
-   * when the 'logged-in'
-   * class is on the <body>
-   */
-
-  .logged-in & {
-    display: none;
-  }
-}
-{% endhighlight %}
 
 ### File structure
 

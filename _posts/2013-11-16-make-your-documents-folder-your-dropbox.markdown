@@ -26,7 +26,7 @@ $ sudo rm -rf ~/Documents
 Now we create a 'symlink' (or 'alias') of the new `~/Dropbox/Documents` directory back to the original Documents locations.
 
 {% highlight bash %}
-$ ls -s ~/Dropbox/Documents ~/Documents
+$ ln -s ~/Dropbox/Documents ~/Documents
 {% endhighlight %}
 
 <img class="no-border" src="/lib/images/make-your-documents-folder-your-dropbox-2.png)" />
