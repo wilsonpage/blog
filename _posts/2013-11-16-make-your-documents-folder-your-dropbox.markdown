@@ -29,6 +29,6 @@ Now we create a 'symlink' (or 'alias') of the new `~/Dropbox/Documents` director
 $ ln -s ~/Dropbox/Documents ~/Documents
 {% endhighlight %}
 
-<img class="no-border" src="/lib/images/make-your-documents-folder-your-dropbox-2.png)" />
+<img class="no-border" src="/lib/images/make-your-documents-folder-your-dropbox-2.png" />
 
 That's all there is to it.
