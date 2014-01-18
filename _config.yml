@@ -1,5 +1,5 @@
 name: Wilson Page
-description: "Wilson is a front-end developer working on Firefox OS at Mozilla. He specialises in mobile web applications."
+description: "Wilson is a front-end developer working on Firefox OS at Mozilla."
 url: http://wilsonpage.co.uk
 permalink: /:title
 markdown: redcarpet
