@@ -47,6 +47,15 @@ module.exports = function(grunt) {
       }
     },
 
+    connect: {
+      server: {
+        options: {
+          port: 3000,
+          base: './_site'
+        }
+      }
+    },
+
     watch: {
       jekyll: {
         files: [
@@ -56,7 +65,7 @@ module.exports = function(grunt) {
           '_layouts/*.html',
           '*.html'
         ],
-        tasks: ['site'],
+        tasks: ['jekyll'],
         options: {
           livereload: true,
         },
@@ -74,10 +83,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-jekyll');
 
 
   grunt.registerTask('site', ['sass:dist', 'jekyll']);
   grunt.registerTask('default', ['site']);
 
+  // Serve locally
+  grunt.registerTask('serve', ['connect', 'watch']);
 };
