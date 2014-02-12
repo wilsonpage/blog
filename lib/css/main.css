@@ -792,6 +792,7 @@ pre code {
    */
 }
 .index-post > .inner {
+  opacity: 1;
   color: inherit;
 }
 .index-post > .inner:hover {
