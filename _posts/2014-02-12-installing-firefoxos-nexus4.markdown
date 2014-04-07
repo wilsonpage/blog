@@ -57,6 +57,7 @@ cd /Volumes/firefoxos/
 
 {% highlight bash %}
 git clone https://github.com/mozilla-b2g/B2G.git
+cd B2G
 {% endhighlight %}
 
 ### 5. 'Config' B2G for this device
@@ -85,3 +86,5 @@ If at any point throughout this process the build scripts error, it is most like
 {% endhighlight %}
 
 You now have a completely fresh, up-to-date version of Firefox OS on your Nexus device.
+
+> Props to [Ryan Watson](http://twitter.com/w0ts0n) for improvements.
