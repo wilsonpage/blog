@@ -19,7 +19,13 @@ Download it with the [Android SDK](http://developer.android.com/sdk/index.html),
 
 #### 2.2 Unzip and `cd ./mako`
 
-#### 2.3 Run `./flash.sh`.
+#### 2.3 Power off device.
+
+#### 2.4 Power on device holding Volume Down + Power.
+
+#### 2.5 Select reboot bootloader.
+
+#### 2.6 Run `./flash.sh`.
 
 Your device should then reboot as a Firefox OS device. Next we want to get the freshest version of Firefox OS onto your Nexus 4. This takes a little more work, but will mean that you will be able to develop at the bleeding edge.
 
@@ -51,6 +57,7 @@ cd /Volumes/firefoxos/
 
 {% highlight bash %}
 git clone https://github.com/mozilla-b2g/B2G.git
+cd B2G
 {% endhighlight %}
 
 ### 5. 'Config' B2G for this device
@@ -79,3 +86,5 @@ If at any point throughout this process the build scripts error, it is most like
 {% endhighlight %}
 
 You now have a completely fresh, up-to-date version of Firefox OS on your Nexus device.
+
+> Props to [Ryan Watson](http://twitter.com/w0ts0n) for improvements.
