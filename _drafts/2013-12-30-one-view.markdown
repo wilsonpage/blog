@@ -1,0 +1,85 @@
+---
+layout: post
+title: "OneView"
+date: 2013-12-30 09:17:00
+tags: javascript components
+---
+
+Over the past couple of months I have been working on ideas for a new JavaScript view engine. It seems that most of the popular view engines out there (Backbone, Ember, Angular) come come bundled as part of a larger app framework. I wanted to start with the lightest possible view library. Any additional functionality should be added in the form of a plugin, bolted on only when it's needed.
+
+### 'View Engine'?
+
+I use the term 'View Engine' to describe a library which gives us a way of declaring visual components. These visual components can be assembled together to form the interface of a web application.
+
+[Backbone](http://backbonejs.org) was my first experience of declaring 'views'. A `Backbone.View` would commonly consist of some markup, in the form of a template, and some event listeners. I love the encapsulation this approach gives, views are self contained and we can stamp out as many as we need.
+
+Events were always at the heart of Backbone, this gave us the opportunity to keep the parts of our application decoupled.
+
+### Backbone's deficiencies
+
+I found Backbone great to work with on small JavaScript apps, but there were some things that I didn't like,
+
+- jQuery is a dependency
+- Underscore is a dependency
+- Arbitrary view nesting isn't easy
+- Server-side rendering wasn't really considered
+- Backbone ships as a complete app solution with `Backbone.Model` & `Backbone.Collection`
+
+### Introducing OneView
+
+At first glance *OneView* is very similar to a Backbone.View. It has,
+
+- A root element that you can inject markup into (`this.el`)
+- The convention of an engine agnostic `template` method
+- Views are instantiable 'classes'
+- Views have events mixed in (`on`, `off`, `fire`)
+
+*OneView* differs in that,
+
+- It has no dependencies (excluding events)
+- Plugin based architecture ensures library can adapt to future unforeseen requirements
+- Server-side rendering considered from day one
+
+### Plugins
+
+*OneView's* biggest strength is its plugin architecture. *OneView* core is as light as it can be; any additional required functionality is bolted on, making sure everyone gets a view engine tailored to their needs.
+
+If *OneView* lacks a specific feature that another framework offers, *OneView* core should provide everything a plugin author requires to add it.
+
+#### Per class plugins
+
+{% highlight javascript %}
+var MyView = oneview.define({
+  name: 'my-view',
+  plugins: [
+    require('oneview-fastdom'),
+    require('oneview-data-binding'),
+    require('oneview-children')
+  ]
+});
+{% endhighlight %}
+
+#### Global plugins
+
+The `oneview.plugin()` method can be used to globally apply plugins to all view classes.
+
+{% highlight javascript %}
+oneview.plugin(require('oneview-fastdom'));
+{% endhighlight %}
+
+It can also be used to add additional features to the `oneview` namespace.
+
+{% highlight javascript %}
+// Add support for custom-elements
+oneview.plugin(require('oneview-custom-element'));
+
+// Use new functionality
+var MyView = oneview.register({ name: 'my-view' });
+{% endhighlight %}
+
+### Web Components
+
+Web components are
+
+When a view is instantiated it is given a 'root element'.
+
