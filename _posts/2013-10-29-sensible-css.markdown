@@ -17,7 +17,7 @@ Aside from which preprocessor you choose to use, I will become your closest ally
 
 ### 2. Standard padding
 
-Throughout our app we need to use padding and margins to space things out. In apps I've worked on in the pass these values have all to often just been random pixel values that looked close to the mockup at the time.
+Throughout our app we need to use padding and margins to space things out. In apps I've worked on in the past these values have all to often just been random pixel values that looked close to the mockup at the time.
 
 Keep all spacing in your app looking consistent by introducing padding variables. I like to keep these 'app wide' variables in a single file called `vars.scss`.
 
@@ -35,6 +35,19 @@ Throughout your app make it a rule that every padding or margin definition must 
 .header {
   padding: $padding;
   margin-bottom: $padding-200;
+}
+{% endhighlight %}
+
+> If you're targeting relatively modern browsers, or aren't using a pre-processor, you could also look at using `rem` units to do something similar.
+
+{% highlight css %}
+html {
+  font-size: 14px;
+}
+
+.header {
+  padding: 1rem;
+  margin-bottom: 2rem;
 }
 {% endhighlight %}
 
@@ -58,18 +71,11 @@ $color-warm-grey-2: #74736C;
 
 It's now a breeze if your designer wants to alter the color pallet slightly.
 
-
-
-### Modules (OOCSS)
-
-### Naming
-
 ### Nesting
 
 With CSS preprocessors comes the ability to nest selectors. With all new things, it's easy to get carried away. I like to keep it to a minimum, attempting not to nest deeper than three levels. I name my classes in a way that means that I can write really short, specific selectors.
 
 This is good for selector matching performance (negligible) and means elements remain portable. By 'portable' I mean that if markup changes slightly, you don't have to go through altering selectors that were previously very specific, so that they match the new document structure.
-
 
 ### File structure
 
@@ -108,9 +114,47 @@ If the markup looks like this,
 .header_search {}
 {% endhighlight %}
 
-### Property order
+### Styling state
 
-### Mixins
+At some point you're going to have to override the default styling of an element when your app is in a specific state. 'State' could be anything, but I'll use the simple example of a disabled button. Our default styling for the button is active, then we have a selector that overrides the default appearance to give it a 'disabled' appearance. One way of structuring this that I'm sure you've all come across is this:
+
+{% highlight css %}
+.my-button {
+  background: red
+}
+
+/* 1000 lines later or in another file */
+
+.my-button[disabled],
+.my-other-thing[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+{% endhighlight %}
+
+This is a nightmare. If I've be given the task to work on `.my-button` I want to go the the initial selector and see *all* the possible states that element can be in, in one place. I am then able to make informed judgements when taking care of my task.
+
+{% highlight css %}
+/** My Button
+ ---------------------------------------------------------*/
+
+.my-button {
+  background: red
+}
+
+/**
+ * [disabled]
+ */
+
+.my-button[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+{% endhighlight %}
+
+I also included a handy divider that gives pre-warning to other developers that I'm defining a stateful override based on the `[disabled]` attribute.
+
+> I wrote a more detailed post on ['Styling state in CSS'](/styling-states-in-css/)
 
 ### JS only classes
 
@@ -136,8 +180,6 @@ In CSS we use the un-prefixed class. **Styling using the `js-*` classes is stric
 }
 {% endhighlight %}
 
-### Reset
-
 ### Avoid 'globals'
 
 In JavaScript it is common knowledge that polluting the global scope with variables is bad practice, in CSS it is less well known. I've inherited projects where I have spent months battling against global styles, let me give an example,
@@ -148,7 +190,7 @@ button {
 }
 {% endhighlight %}
 
-By writing the above CSS the developer has made the assumption that every `<button>` element in the application must have the following styles. Now everytime I want to use a button element I find myself reseting these styles,
+By writing the above CSS the developer has made the assumption that every `<button>` element in the application must have the following styles. Now every-time I want to use a button element I find myself reseting these styles.
 
 {% highlight scss %}
 .my-button {
@@ -157,3 +199,15 @@ By writing the above CSS the developer has made the assumption that every `<butt
 {% endhighlight %}
 
 If we have third-party widgets in our app, they too will be impacted by these global styles.
+
+I usually try to avoid tag selectors, but if they must be used, I use a direct-child selector (`>`) to ensure these styles don't leak where they're not wanted.
+
+{% highlight css %}
+.my-container > button {
+  margin-bottom: 20px;
+}
+{% endhighlight %}
+
+### Summary
+
+We've all experienced a CSS nightmare at some point; it takes discipline and conventions to keep everything sane. I've tried a lot of things, some worked, some didn't. In this article I've tried to distill 'the best bits'. Drop a comment if you've discovered techniques that help maintain your sanity.
