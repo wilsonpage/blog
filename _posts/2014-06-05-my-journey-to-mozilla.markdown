@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My journey to Mozilla"
-date: 2014-06-05 23:09:00
+date: 2014-08-03 12:28:00
 tags: diary
 ---
 
@@ -27,7 +27,7 @@ I was scared, but again I remember the experience being laid-back and friendly. 
 
 It was another few weeks of silence before I heard the news that I had been accepted.
 
-![Salles des fetes, Mozilla Paris](/lib/images/mozilla-paris.png)
+![Salles des fetes, Mozilla Paris](/lib/images/mozilla-paris.jpg)
 
 ### Starting
 
