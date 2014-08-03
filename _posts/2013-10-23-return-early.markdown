@@ -116,7 +116,7 @@ function myFunction2(value) {
 
 The best type of code we can write is code that others' can quickly understand and contribute to. I'm always looking for ways to make my logic as simple to follow as possible.
 
-Each nested block demands an allocation of memory from the reader. As the reader dives deeper and deeper into nested blocks they will eventually blow their capacity, and lose their train of thought.
+Each nested block demands an allocation of short-term memory from the reader's brain. As the reader dives deeper and deeper into nested blocks they will eventually blow their capacity, and lose their train of thought.
 
 If we avoid nesting, we make our code easier to read. If code is easier to read, more people can contribute, and bugs can be more easily spotted.
 
