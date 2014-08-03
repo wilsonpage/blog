@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The component approach"
-date: 2014-01-18 17:10:00
+date: 2014-03-14 17:10:00
 tags: javascript components
 ---
 
@@ -724,46 +724,6 @@ var component = new MyComponent({
 {% endhighlight %}
 
 This added control enabled us to solve further unforeseen problems in the app, and allowed us to re-use components in places where otherwise we would have had to write from scratch.
-
-
-
-
-### Intro
-
-#### What is a 'component'?
-
-- Small self contained piece of UI
-- Self-contained mini apps
-- Apps are an assembly of components
-
-#### What are the advantages?
-
-- Team members can develop without treading on each others' toes.
-- Components are reusable and portable.
-- Decoupled and untangled.
-
-### Layouts and modules
-
-### Working with components
-
-
-#### Gluing components together
-
-- Events
-- Configuring with options
-
-#### Responsive components
-
-- Media queries aren't always enough
-
-### Unit testability
-
-### The future of components
-
-- Web Components
-- Polymer
-- x-tags
-- Brick
 
 ### Conclusion
 
