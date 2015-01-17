@@ -5,10 +5,7 @@ date: 2015-01-17 12:00:00
 tags: javascript modules
 ---
 
-I've been using AMD for a various projects for a while. It has some advantages over CommonJS solutions (like Browserify).
-
-- It's trivial to load modules 'lazily' (later on demand) and the dependencies just magically resolve.
-- Testing doesn't require special test builds; just `require()` the module to test.
+I've been using AMD for a various projects for a while. It has some advantages over CommonJS solutions (like Browserify), but the downside of complex package install.
 
 One thing I never like about AMD was having to maintain a large `paths` config to resolve third-party package sub-dependencies. Here's an example of one of these:
 
