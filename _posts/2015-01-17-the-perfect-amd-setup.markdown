@@ -110,7 +110,7 @@ It makes sense to plug the adapter creation step into a *Bower* `postinstall` ho
 {% highlight json %}
 {
   "scripts": {
-    "postinstall": "npm run apm"
+    "postinstall": "./node_modules/.bin/adapt-pkg-main bower_components configFileNames=bower.json,package.json"
   }
 }
 {% endhighlight %}
