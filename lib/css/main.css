@@ -646,7 +646,7 @@ code {
   border: 1px solid #ddd;
   background-color: #f8f8f8;
   border-radius: 3px;
-  font-size: 12px;
+  font-size: 0.75em;
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
   color: #000;
 }
