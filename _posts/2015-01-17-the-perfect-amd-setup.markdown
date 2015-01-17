@@ -2,15 +2,15 @@
 layout: post
 title: "The perfect AMD setup"
 date: 2015-01-17 12:00:00
-tags: javascript modules
+tags: javascript modules requirejs
 ---
 
-I've been using AMD for a various projects for a while. It has some advantages over CommonJS solutions (like Browserify), but the downside of complex package install.
+I've been using AMD modules (*RequireJS*) for various projects for a while. It has some advantages over 'CommonJS' (ie. *Browserify*) solutions, but has additional complexity around package installation.
 
-One thing I never like about AMD was having to maintain a large `paths` config to resolve third-party package sub-dependencies. Here's an example of one of these:
+One thing I disliked about AMD was having to maintain a large `paths` config to resolve third-party package sub-dependencies. Here's an example of one of these:
 
 {% highlight javascript %}
-requirejs.config({
+require.config({
   baseUrl: '/js',
 
   // 'paths' lets us alias complex
@@ -37,19 +37,19 @@ As `gaia-component` is a dependency of the `gaia-header` module, this path confi
 
 ### Installation process
 
-The NPM/CommonJS package installation process is dreamy:
+The *NPM/CommonJS* package installation process is dreamy:
 
 1. `$ npm install cool-package`
 2. `require('cool-package');`
 
-By contrast the Bower/AMD installation process is involved and error prone:
+By contrast the *Bower*/*AMD* installation process is involved and error prone:
 
 1. `$ bower install cool-package`
 2. Search through source code of `cool-package` and identify any sub-dependency `require()`s.
 3. Amend the `require.config` paths to map any sub dependency paths to their correct locations.
 4. Run app, on failure return to step 2.
 
-The good news is there's a better solution for Bower and AMD users which enables:
+The good news is there's a better solution for *Bower* and AMD users which enables:
 
 1. `$ bower install cool-package`
 2. `require('cool-package');`
@@ -58,13 +58,13 @@ Seamlessly resolving any nested `require('some-sub-dependency')`. Read on, all w
 
 ### A better solution
 
-I was discussing this problem with [James Burke](http://twitter.com/jrburke) and he kindly wrote a small command-line tool called [`adapt-pkg-main`](http://github.com/jrburke/adapt-pkg-main) to help. The documentation in the repo is thorough, but I'll try to outline briefly how it works.
+I was discussing this problem with [James Burke](http://twitter.com/jrburke) and he kindly wrote a small command-line tool called '[adapt-pkg-main](http://github.com/jrburke/adapt-pkg-main)' to help. The documentation in the repo is thorough, but I'll try to outline briefly how it works.
 
 #### Step One: Package main adapters
 
-*Adapt-pkg-main* will look for packages in a given packages directory (eg. `bower_components/`). For each package in the directory it will look for a package description file (eg. `bower.json`, `package.json`). Both `bower.json` and `package.json` have the convention of a `"main"` attribute which declares the package's entry point (eg. `cool-package/cool-package.js`).
+[*Adapt-pkg-main*](http://github.com/jrburke/adapt-pkg-main) will look for packages in a given packages directory (eg. `bower_components/`). For each package in the directory it will look for a package description file (eg. `bower.json`, `package.json`). Both `bower.json` and `package.json` have the convention of a `"main"` attribute which declares the package's entry point (eg. `cool-package/cool-package.js`).
 
-*Adapt-pkg-main* will use this `"main"` value to create a new 'adapter' module for each package like so:
+[*Adapt-pkg-main*](http://github.com/jrburke/adapt-pkg-main) will use this `"main"` value to create a new 'adapter' module for each package like so:
 
 **Main file:** `bower_components/cool-package/cool-package.js`<br/>
 **Created adapter:** `bower_components/cool-package.js`
@@ -75,9 +75,9 @@ The `cool-package.js` adapter is AMD by default, but this can be configured:
 define(['./cool-package/cool-package'], function(m) { return m; });
 {% endhighlight %}
 
-#### Step Two: Require Config
+#### Step Two: `require.config`
 
-The second part of the trick is to configure RequireJS to assume all unprefixed paths to look in `bower_components`.
+The second part of the trick is to configure *RequireJS* to assume all unprefixed paths to look in `bower_components`.
 
 {% highlight javascript %}
 require.config({
@@ -101,11 +101,11 @@ You'll notice that the unprefixed paths now resolve to the adapter files that `a
 
 ### Path convention
 
-Once you have this require configuration, it makes sense to use relative style paths whenever you're requiring a file that doesn't live in `bower_components/`, otherwise it'll have to prefixed with `root/`.
+Once you have this require configuration, it makes sense to use relative style paths whenever you're requiring a file that doesn't live in `bower_components/`, otherwise it'll have to prefixed with `root/`. Just write your `require()` paths exactly as you would in Node.
 
 ### Automation
 
-It makes sense to plug the adapter creation step into a Bower `postinstall` hook so we can forget about it. To do this create a `.bowerrc` file at the root of you project with the following:
+It makes sense to plug the adapter creation step into a *Bower* `postinstall` hook so we can forget all about it. Create a `.bowerrc` file at the root of you project (if you don't already have one) with the following:
 
 {% highlight json %}
 {
@@ -119,5 +119,5 @@ It makes sense to plug the adapter creation step into a Bower `postinstall` hook
 
 Drop a comment if you have any questions or improvements :)
 
-`bower install dreamy-bower-amd`<br/>
-`require('dreamy-bower-amd');`
+`bower install sweet-dreams`<br/>
+`require('sweet-dreams');`
