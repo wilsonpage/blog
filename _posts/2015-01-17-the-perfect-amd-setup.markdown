@@ -37,17 +37,17 @@ As `gaia-component` is a dependency of the `gaia-header` module, this path confi
 
 ### Installation process
 
-The *NPM/CommonJS* package installation process is dreamy:
-
-1. `$ npm install cool-package`
-2. `require('cool-package');`
-
-By contrast the *Bower*/*AMD* installation process is involved and error prone:
+*Bower*/*AMD* package installation process is involved and error prone:
 
 1. `$ bower install cool-package`
 2. Search through source code of `cool-package` and identify any sub-dependency `require()`s.
 3. Amend the `require.config` paths to map any sub dependency paths to their correct locations.
 4. Run app, on failure return to step 2.
+
+By contrast the NPM installation process is dreamy:
+
+1. `$ npm install cool-package`
+2. `require('cool-package');`
 
 The good news is there's a better solution for *Bower* and AMD users which enables:
 
