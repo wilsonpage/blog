@@ -88,12 +88,12 @@ require.config({
 require(['root/app'])
 {% endhighlight %}
 
-After this one-time configuration paths will be resolved as follows:
+After this one-time configuration, paths will be resolved as follows:
 
 - `require('cool-package')` -> `bower_components/cool-package.js`
 - `require('some-sub-dependency')` -> `bower_components/some-sub-dependency.js`
 - `require('./lib/foo')` -> `CURRENT_MODULE_DIR/lib/foo.js`
-- `require('app/main')` -> `/main.js`q
+- `require('root/app')` -> `/app.js`
 
 You'll notice that the unprefixed paths now resolve to the adapter files that `adapt-pkg-main` created, so the full resolution (via the adapter module) will look like:
 
