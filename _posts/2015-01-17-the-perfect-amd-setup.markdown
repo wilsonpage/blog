@@ -69,7 +69,7 @@ I was discussing this problem with [James Burke](http://twitter.com/jrburke) and
 **Main file:** `bower_components/cool-package/cool-package.js`<br/>
 **Created adapter:** `bower_components/cool-package.js`
 
-The `cool-package.js` adapter is AMD by default, but this can be configured:
+The `cool-package.js` adapter is AMD by default, but this 'adapterText' [can be configured](https://github.com/jrburke/adapt-pkg-main#options):
 
 {% highlight javascript %}
 define(['./cool-package/cool-package'], function(m) { return m; });
