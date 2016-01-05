@@ -1,0 +1,66 @@
+---
+layout: post
+title: "Fastdom V1"
+date: 2016-01-05 17:40:00
+tags: javascript performance
+---
+
+Just over two years after [Fastdom](https://github.com/wilsonpage/fastdom) was born, I'm happy to announce a formal V1 release.
+
+Fastdom V1 is 20% smaller (600 bytes minified gzipped) than the previous release. This is largely due to code simplification and removal of some rarely used APIs.
+
+### Additions
+
+Fastdom aims to be a tiny unopinionated library, for this reason, in order to meet everyone's particular needs, we added the ability to `.extend()` the core library to add additional functionality.
+
+{% highlight javascript %}
+var myFastdom = fastdom.extend({
+  measure: function(fn, ctx) {
+    // do custom stuff ...
+
+    // then call the parent method
+    return this.fastdom.measure(fn, ctx);
+  }
+});
+{% endhighlight %}
+
+Fastdom ships with [a couple of core-extensions](https://github.com/wilsonpage/fastdom/tree/master/extensions) that address some higher-level features people have been asking for.
+
+### Changes
+
+Fastdom V1 comes with some (breaking) API name changes.
+
+- `fastdom.read()` -> `fastdom.measure()`
+- `fastdom.write()` -> `fastdom.mutate()`
+- `fastdom.onError` -> `fastdom.catch`
+
+These name changes were suggested by [Paul Irish](http://twitter.com/paul_irish) in an effort to improve clarity over the type of code that should be contained in each block.
+
+### Removals
+
+We removed `fastdom.defer()` as its use-cases were ambiguous and it was rarely used.
+
+### Strict mode
+
+It's very important that all DOM mutations or measurements go through `fastdom` to ensure good performance; to help you with this we wrote `fastdom-strict`. When fastdom-strict.js is loaded, it will throw errors when sensitive DOM APIs are called at the wrong time.
+
+This is useful when working with a large team who might not all be aware of `fastdom` or its benefits. It can also prove useful for catching 'un-fastdom-ed' code when migrating an app to `fastdom`.
+
+{% highlight html %}
+<script src="fastdom.js"></script>
+<script src="fastdom-strict.js"></script>
+{% endhighlight %}
+
+{% highlight javascript %}
+// throws "Can only get .clientWidth during 'measure' phase"
+element.clientWidth;
+
+// throws "Can only get .clientWidth during 'measure' phase"
+fastdom.mutate(function() { element.clientWidth; });
+
+// does not throw
+fastdom.measure(function() { element.clientWidth; });
+{% endhighlight %}
+
+- `fastdom-strict` will not throw if nodes are not attached to the document.
+- You should use fastdom-strict in development to catch rendering performance issues before they hit production. It is probably not good to use fastdom-strict in production as it wraps APIs.
