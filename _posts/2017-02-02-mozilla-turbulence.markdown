@@ -18,7 +18,7 @@ Times* and jumped on the opportunity at *Mozilla*.
 After countless interviews I got the news that I'd been offered the job. I was ecstatic.
 As a young developer (26) I'd just landed my dream job.
 
-I was constantly scared that my cover would be blown and, that someone would find out that I
+I was constantly scared that my cover would be blown, and that someone would find out that I
 wasn't good enough to be here. To circumvent this I gave everything I had. I was working
 alongside some of the best web-developers in the world and the inventor
 of JavaScript was at the helm ... what could be better?
