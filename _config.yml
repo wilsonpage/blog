@@ -1,15 +1,14 @@
 name: Wilson Page
-description: "Wilson is a front-end developer working on Firefox OS at Mozilla."
+description: "Wilson is a front-end engineer in search of a new challenge."
 url: http://wilsonpage.co.uk
-permalink: /:title
+permalink: /:title/
 markdown: redcarpet
 redcarpet:
   extensions: ["tables"]
-pygments: true
+highlighter: pygments
 exclude: [
   'components',
   'node_modules',
   'GruntFile.js',
   'package.json'
 ]
-
