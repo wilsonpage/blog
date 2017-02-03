@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Mozilla Turbulence"
+title: "Onboard Mozilla Turbulence"
 date: 2017-02-02 23:42:00
 tags: diary
 ---
 
 This morning I found out that the part of *Mozilla* that I've be working within for the past year had collapsed.
 A meeting was scheduled with HR for them to tell me my job is 'at risk'. In other words I have a few weeks
-to find a something new.
+to find a something new. Here's my perspective on what happened.
 
 ### Joining Mozilla
 
