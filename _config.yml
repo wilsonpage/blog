@@ -1,14 +1,9 @@
 name: Wilson Page
-description: "Wilson is a front-end engineer in search of a new challenge."
-url: http://wilsonpage.co.uk
+description: 'Wilson is a front-end engineer in search of a new challenge.'
+url: http://blog.wilsonpage.co.uk
 permalink: /:title/
 markdown: redcarpet
 redcarpet:
-  extensions: ["tables"]
+  extensions: ['tables']
 highlighter: pygments
-exclude: [
-  'components',
-  'node_modules',
-  'GruntFile.js',
-  'package.json'
-]
+exclude: ['components', 'node_modules', 'GruntFile.js', 'package.json']
