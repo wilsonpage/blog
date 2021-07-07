@@ -42,7 +42,7 @@ The general sibling selector is similar, but will style **all** the siblings **a
 Let's colour all the divs after `.a` green.
 
 {% highlight css %}
-.b ~ div {
+.a ~ div {
   background: green;
 }
 {% endhighlight %}
